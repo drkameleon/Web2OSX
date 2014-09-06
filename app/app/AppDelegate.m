@@ -29,7 +29,21 @@
 - (void)awakeFromNib
 {
     // Set backend
+    
     [[self web2OSX] setBackend:self];
+    
+    // Set observers
+    
+    OBSERVE(_LOAD_FINISHED, @selector(loadFinished:), nil);
+}
+
+//=====================
+// Observers
+//=====================
+
+- (void)loadFinished:(NSNotification*)n
+{
+    NSLog(@"Load Finished.");
 }
 
 //=====================

@@ -30,6 +30,9 @@
     [self setResourceLoadDelegate:self];
     [self setUIDelegate:self];
     
+    // Set observers
+    OBSERVE(WebViewProgressFinishedNotification, @selector(webviewProgressFinished:), nil);
+    
     // Load Web App
     [[self mainFrame] loadHTMLString:STR_FROM_FILE(_BASE_PATH)
                              baseURL:RSRC_URL(_BASE_PATH)];
@@ -66,6 +69,15 @@ ENABLE_JS_BRIDGE
 {
     // Print forwarded message from JS's console.log to Xcode log window
     NSLog(@"%@", msg);
+}
+
+//=====================
+// Observers
+//=====================
+
+- (void)webviewProgressFinished:(NSNotification*)n
+{
+    NOTIFY(_LOAD_FINISHED, nil);
 }
 
 //=====================

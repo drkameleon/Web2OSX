@@ -13,12 +13,20 @@
 // Defines
 //=====================
 
+// Paths
+
 #define _RESOURCES_PATH     [[NSBundle mainBundle] resourcePath]
 #define _BASE_PATH          RSRC_PATH(@"html/index.html")
 #define _WIN_SCR_OBJ        [self windowScriptObject]
 
+// Window Script Objects' aliases
+
 #define _CORE               @"Core"
 #define _BACKEND            @"Backend"
+
+// Notifications
+
+#define _LOAD_FINISHED      @"W2OSX Load Finished"
 
 //=====================
 // Macros
@@ -32,6 +40,9 @@
 
 #define STR_FROM_FILE(X)    [NSString stringWithContentsOfFile:(X) encoding:NSUTF8StringEncoding error:nil]
 
+#define OBSERVE(X,Y,Z)      [[NSNotificationCenter defaultCenter] addObserver:self selector:(Y) name:(X) object:(Z)]
+#define UNOBSERVE(X)        [[NSNotificationCenter defaultCenter] removeObserver:self name:(X) object:nil]
+#define NOTIFY(X,Y)         [[NSNotificationCenter defaultCenter] postNotificationName:(X) object:(Y)]
 
 //=====================
 // Imports
