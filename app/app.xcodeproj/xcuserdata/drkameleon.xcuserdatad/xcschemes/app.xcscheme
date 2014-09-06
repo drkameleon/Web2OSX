@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C7DF0EB19BAFDEA00B1EF41"
-               BuildableName = "Web2OSX.app"
-               BlueprintName = "Web2OSX"
-               ReferencedContainer = "container:Web2OSX.xcodeproj">
+               BlueprintIdentifier = "8C7DF12B19BAFE8D00B1EF41"
+               BuildableName = "app.app"
+               BlueprintName = "app"
+               ReferencedContainer = "container:app.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C7DF10C19BAFDEA00B1EF41"
-               BuildableName = "Web2OSXTests.xctest"
-               BlueprintName = "Web2OSXTests"
-               ReferencedContainer = "container:Web2OSX.xcodeproj">
+               BlueprintIdentifier = "8C7DF14C19BAFE8D00B1EF41"
+               BuildableName = "appTests.xctest"
+               BlueprintName = "appTests"
+               ReferencedContainer = "container:app.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8C7DF0EB19BAFDEA00B1EF41"
-            BuildableName = "Web2OSX.app"
-            BlueprintName = "Web2OSX"
-            ReferencedContainer = "container:Web2OSX.xcodeproj">
+            BlueprintIdentifier = "8C7DF12B19BAFE8D00B1EF41"
+            BuildableName = "app.app"
+            BlueprintName = "app"
+            ReferencedContainer = "container:app.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -61,10 +61,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8C7DF0EB19BAFDEA00B1EF41"
-            BuildableName = "Web2OSX.app"
-            BlueprintName = "Web2OSX"
-            ReferencedContainer = "container:Web2OSX.xcodeproj">
+            BlueprintIdentifier = "8C7DF12B19BAFE8D00B1EF41"
+            BuildableName = "app.app"
+            BlueprintName = "app"
+            ReferencedContainer = "container:app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -79,10 +79,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8C7DF0EB19BAFDEA00B1EF41"
-            BuildableName = "Web2OSX.app"
-            BlueprintName = "Web2OSX"
-            ReferencedContainer = "container:Web2OSX.xcodeproj">
+            BlueprintIdentifier = "8C7DF12B19BAFE8D00B1EF41"
+            BuildableName = "app.app"
+            BlueprintName = "app"
+            ReferencedContainer = "container:app.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

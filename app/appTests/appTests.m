@@ -1,6 +1,6 @@
 //
-//  Web2OSXTests.m
-//  Web2OSXTests
+//  appTests.m
+//  appTests
 //
 //  Created by Dr.Kameleon on 9/6/14.
 //  Copyright (c) 2014 InSili.co. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface Web2OSXTests : XCTestCase
+@interface appTests : XCTestCase
 
 @end
 
-@implementation Web2OSXTests
+@implementation appTests
 
 - (void)setUp
 {

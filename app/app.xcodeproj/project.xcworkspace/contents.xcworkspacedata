@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Web2OSX.xcodeproj">
+      location = "self:app.xcodeproj">
    </FileRef>
 </Workspace>
