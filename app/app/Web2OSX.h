@@ -10,6 +10,30 @@
  ****************************************************/
 
 //=====================
+// Defines
+//=====================
+
+#define _RESOURCES_PATH     [[NSBundle mainBundle] resourcePath]
+#define _BASE_PATH          RSRC_PATH(@"html/index.html")
+#define _WIN_SCR_OBJ        [self windowScriptObject]
+
+#define _CORE               @"Core"
+#define _BACKEND            @"Backend"
+
+//=====================
+// Macros
+//=====================
+
+#define ENABLE_JS_BRIDGE    + (BOOL)isSelectorExcludedFromWebScript:(SEL)aSelector { return NO; }\
++ (BOOL)isKeyExcludedFromWebScript:(const char *)name { return NO; }
+
+#define RSRC_PATH(X)        [_RESOURCES_PATH stringByAppendingPathComponent:(X)]
+#define RSRC_URL(X)         [NSURL fileURLWithPath:(X)]
+
+#define STR_FROM_FILE(X)    [NSString stringWithContentsOfFile:(X) encoding:NSUTF8StringEncoding error:nil]
+
+
+//=====================
 // Imports
 //=====================
 

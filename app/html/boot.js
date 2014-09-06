@@ -102,6 +102,6 @@ $(function()
     });
   
     console.log("Hello world");
-    console.log($("h1"));
+    Backend.testMe();
 });
 

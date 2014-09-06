@@ -9,13 +9,42 @@
  * AppDelegate.m
  ****************************************************/
 
+//=====================
+// Imports
+//=====================
+
 #import "AppDelegate.h"
 
 @implementation AppDelegate
 
+//=====================
+// Start up
+//=====================
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+}
+
+- (void)awakeFromNib
+{
+    // Set backend
+    [[self web2OSX] setBackend:self];
+}
+
+//=====================
+// Backend Library
+//=====================
+
+// Necessary for Javascript->Cocoa bridging
+
+ENABLE_JS_BRIDGE
+
+// Functions
+
+- (void)testMe
+{
+    NSLog(@"Testing backend function call");
 }
 
 @end

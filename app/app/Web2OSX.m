@@ -10,26 +10,6 @@
  ****************************************************/
 
 //=====================
-// Defines
-//=====================
-
-#define _RESOURCES_PATH     [[NSBundle mainBundle] resourcePath]
-#define _BASE_PATH          RSRC_PATH(@"html/index.html")
-#define _WIN_SCR_OBJ        [self windowScriptObject]
-
-#define _CORE               @"Core"
-#define _BACKEND            @"Backend"
-
-//=====================
-// Macros
-//=====================
-
-#define RSRC_PATH(X)        [_RESOURCES_PATH stringByAppendingPathComponent:(X)]
-#define RSRC_URL(X)         [NSURL fileURLWithPath:(X)]
-
-#define STR_FROM_FILE(X)    [NSString stringWithContentsOfFile:(X) encoding:NSUTF8StringEncoding error:nil]
-
-//=====================
 // Imports
 //=====================
 
@@ -76,6 +56,12 @@
 // Core Library
 //=====================
 
+// Necessary for Javascript->Cocoa bridging
+
+ENABLE_JS_BRIDGE
+
+// Functions
+
 - (void)log:(NSString*)msg
 {
     // Print forwarded message from JS's console.log to Xcode log window
@@ -85,18 +71,6 @@
 //=====================
 // Delegates
 //=====================
-
-+ (BOOL)isSelectorExcludedFromWebScript:(SEL)aSelector
-{
-    // Necessary for Javascript->Cocoa bridging
-    return NO;
-}
-
-+ (BOOL)isKeyExcludedFromWebScript:(const char *)name
-{
-    // Necessary for Javascript->Cocoa bridging
-    return NO;
-}
 
 //-----------------
 // UIDelegate
