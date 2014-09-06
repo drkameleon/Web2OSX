@@ -102,7 +102,7 @@
 // UIDelegate
 //-----------------
 
-        - (NSArray *)webView:(WebView *)sender
+- (NSArray *)webView:(WebView *)sender
   contextMenuItemsForElement:(NSDictionary *)element
             defaultMenuItems:(NSArray *)defaultMenuItems
 {
