@@ -14,7 +14,7 @@
 //=====================
 
 #define _RESOURCES_PATH     [[NSBundle mainBundle] resourcePath]
-#define _BASE_PATH          RSRC_PATH(@"index.html")
+#define _BASE_PATH          RSRC_PATH(@"html/index.html")
 
 //=====================
 // Macros
