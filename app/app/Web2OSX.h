@@ -16,6 +16,7 @@
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebView.h>
 #import <WebKit/WebFrame.h>
+#import <WebKit/WebScriptObject.h>
 
 @interface Web2OSX : WebView
 
@@ -23,7 +24,14 @@
 // Functions
 //=====================
 
+- (void)setBackend:(id)backend;
 - (NSString*)execJs:(NSString*)js;
+
+//=====================
+// Core Library
+//=====================
+
+- (void)log:(NSString*)msg;
 
 //=====================
 // Delegates

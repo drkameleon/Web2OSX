@@ -15,6 +15,7 @@
 
 #define _RESOURCES_PATH     [[NSBundle mainBundle] resourcePath]
 #define _BASE_PATH          RSRC_PATH(@"html/index.html")
+#define _WIN_SCR_OBJ        [self windowScriptObject]
 
 //=====================
 // Macros
@@ -50,18 +51,27 @@
     [[self mainFrame] loadHTMLString:STR_FROM_FILE(_BASE_PATH)
                              baseURL:RSRC_URL(_BASE_PATH)];
     
-    id win = [self windowScriptObject];
-    [win setValue:self forKey:@"API"];
+    [_WIN_SCR_OBJ setValue:self forKey:@"Core"];
 }
 
 //=====================
 // Functions
 //=====================
 
+- (void)setBackend:(id)backend
+{
+    [_WIN_SCR_OBJ setValue:backend forKey:@"Backend"];
+}
+
 - (NSString*)execJs:(NSString*)js
 {
     return [self stringByEvaluatingJavaScriptFromString:js];
 }
+
+
+//=====================
+// Core Library
+//=====================
 
 - (void)log:(NSString*)msg
 {
@@ -74,6 +84,7 @@
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)aSelector
 {
+    NSLog(@"Asking for: %@",NSStringFromSelector(aSelector));
     // Necessary for Javascript->Cocoa bridging
     return NO;
 }

@@ -79,13 +79,13 @@ JSON.stringifyOnce = function(obj, replacer, indent)
 console.log = function() {
     if ((arguments.length==1) && (typeof arguments[0] == "string"))
     {
-        API.log_(arguments[0]);
+        Core.log_(arguments[0]);
     }
     else
     {
         $.each(arguments, function(i,a)
             {
-               API.log_(JSON.stringifyOnce(a, null, 4));
+               Core.log_(JSON.stringifyOnce(a, null, 4));
             }
         );
     }
