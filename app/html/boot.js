@@ -10,14 +10,85 @@
  ****************************************************/
 
 //=====================
+// Helpers
+//=====================
+
+JSON.stringifyOnce = function(obj, replacer, indent)
+{
+    var printedObjects = [];
+    var printedObjectKeys = [];
+    
+    function printOnceReplacer(key, value)
+    {
+        if ( printedObjects.length > 2000)
+        {
+            return 'object too long';
+        }
+        
+        var printedObjIndex = false;
+        printedObjects.forEach(function(obj, index){
+                               if(obj===value){
+                               printedObjIndex = index;
+                               }
+                               });
+        
+        if ( key == '')
+        {
+            printedObjects.push(obj);
+            printedObjectKeys.push("root");
+            return value;
+        }
+        
+        else if (printedObjIndex+"" != "false" && typeof(value)=="object")
+        {
+            if ( printedObjectKeys[printedObjIndex] == "root")
+            {
+                return "(pointer to root)";
+            }
+            else
+            {
+                return "(see " + ((!!value && !!value.constructor) ? value.constructor.name.toLowerCase()  : typeof(value)) + " with key " + printedObjectKeys[printedObjIndex] + ")";
+            }
+        }
+        else
+        {
+            var qualifiedKey = key || "(empty key)";
+            printedObjects.push(value);
+            printedObjectKeys.push(qualifiedKey);
+            if (replacer)
+            {
+                return replacer(key, value);
+            }
+            else
+            {
+                return value;
+            }
+        }
+    }
+    
+    return JSON.stringify(obj, printOnceReplacer, indent);
+};
+
+//=====================
 // Boot
 //=====================
 
 // Override native console.log
 // and send logs to Objective-C
 
-console.log = function(text) {
-    API.log_(text);
+console.log = function() {
+    if ((arguments.length==1) && (typeof arguments[0] == "string"))
+    {
+        API.log_(arguments[0]);
+    }
+    else
+    {
+        $.each(arguments, function(i,a)
+            {
+               API.log_(JSON.stringifyOnce(a, null, 4));
+            }
+        );
+    }
 }
 
 // On jQuery-ready
@@ -30,6 +101,7 @@ $(function()
         preventDefault();
     });
   
-    API.log_("Done");
+    console.log("Hello world");
+    console.log($("h1"));
 });
 
