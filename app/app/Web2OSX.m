@@ -52,6 +52,15 @@
 }
 
 //=====================
+// Functions
+//=====================
+
+- (NSString*)execJs:(NSString*)js
+{
+    return [self stringByEvaluatingJavaScriptFromString:js];
+}
+
+//=====================
 // Delegates
 //=====================
 

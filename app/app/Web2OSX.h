@@ -9,10 +9,26 @@
  * Web2OSX.h
  ****************************************************/
 
+//=====================
+// Imports
+//=====================
+
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebView.h>
 #import <WebKit/WebFrame.h>
 
 @interface Web2OSX : WebView
+
+//=====================
+// Functions
+//=====================
+
+- (NSString*)execJs:(NSString*)js;
+
+//=====================
+// Delegates
+//=====================
+
+- (NSArray *)webView:(WebView *)sender contextMenuItemsForElement:(NSDictionary *)element defaultMenuItems:(NSArray *)defaultMenuItems;
 
 @end

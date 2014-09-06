@@ -9,8 +9,13 @@
  * boot.js
  ****************************************************/
 
-$(function(){
-  $("h1").html("done");
+$(function()
+{
+    // Make sure not context menu appears
+    $("body").bind("contextmenu", function ()
+    {
+        preventDefault();
+    });
   
 });
 
