@@ -1,8 +1,13 @@
-//
-//  Prefix header
-//
-//  The contents of this file are implicitly included at the beginning of every source file.
-//
+/****************************************************
+ * Web2OSX
+ * Webview-based Cocoa/OSX application framework
+ *
+ * Copyright (c) 2014, Dr.Kameleon
+ * All rights reserved.
+ *
+ *---------------------------------------------------
+ * app-Prefix.pch
+ ****************************************************/
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>

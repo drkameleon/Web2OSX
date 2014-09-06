@@ -18,6 +18,8 @@
 		8C7DF15019BAFE8D00B1EF41 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7DF12F19BAFE8D00B1EF41 /* Cocoa.framework */; };
 		8C7DF15819BAFE8D00B1EF41 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8C7DF15619BAFE8D00B1EF41 /* InfoPlist.strings */; };
 		8C7DF15A19BAFE8D00B1EF41 /* appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C7DF15919BAFE8D00B1EF41 /* appTests.m */; };
+		8C7DF16719BB058C00B1EF41 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C7DF16619BB058C00B1EF41 /* WebKit.framework */; };
+		8C7DF16B19BB05DE00B1EF41 /* Web2OSX.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C7DF16A19BB05DE00B1EF41 /* Web2OSX.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,9 @@
 		8C7DF15519BAFE8D00B1EF41 /* appTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "appTests-Info.plist"; sourceTree = "<group>"; };
 		8C7DF15719BAFE8D00B1EF41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8C7DF15919BAFE8D00B1EF41 /* appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = appTests.m; sourceTree = "<group>"; };
+		8C7DF16619BB058C00B1EF41 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		8C7DF16919BB05DE00B1EF41 /* Web2OSX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Web2OSX.h; sourceTree = "<group>"; };
+		8C7DF16A19BB05DE00B1EF41 /* Web2OSX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Web2OSX.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C7DF16719BB058C00B1EF41 /* WebKit.framework in Frameworks */,
 				8C7DF13019BAFE8D00B1EF41 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,6 +82,7 @@
 		8C7DF12319BAFE8D00B1EF41 = {
 			isa = PBXGroup;
 			children = (
+				8C7DF16319BB055900B1EF41 /* html */,
 				8C7DF13519BAFE8D00B1EF41 /* app */,
 				8C7DF15319BAFE8D00B1EF41 /* appTests */,
 				8C7DF12E19BAFE8D00B1EF41 /* Frameworks */,
@@ -95,6 +102,7 @@
 		8C7DF12E19BAFE8D00B1EF41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C7DF16619BB058C00B1EF41 /* WebKit.framework */,
 				8C7DF12F19BAFE8D00B1EF41 /* Cocoa.framework */,
 				8C7DF14E19BAFE8D00B1EF41 /* XCTest.framework */,
 				8C7DF13119BAFE8D00B1EF41 /* Other Frameworks */,
@@ -115,6 +123,7 @@
 		8C7DF13519BAFE8D00B1EF41 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				8C7DF16819BB05C700B1EF41 /* Classes */,
 				8C7DF14119BAFE8D00B1EF41 /* AppDelegate.h */,
 				8C7DF14219BAFE8D00B1EF41 /* AppDelegate.m */,
 				8C7DF14419BAFE8D00B1EF41 /* MainMenu.xib */,
@@ -152,6 +161,38 @@
 				8C7DF15619BAFE8D00B1EF41 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C7DF16319BB055900B1EF41 /* html */ = {
+			isa = PBXGroup;
+			children = (
+				8C7DF16419BB057F00B1EF41 /* css */,
+				8C7DF16519BB057F00B1EF41 /* scripts */,
+			);
+			path = html;
+			sourceTree = "<group>";
+		};
+		8C7DF16419BB057F00B1EF41 /* css */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = css;
+			sourceTree = "<group>";
+		};
+		8C7DF16519BB057F00B1EF41 /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
+		8C7DF16819BB05C700B1EF41 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8C7DF16919BB05DE00B1EF41 /* Web2OSX.h */,
+				8C7DF16A19BB05DE00B1EF41 /* Web2OSX.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C7DF16B19BB05DE00B1EF41 /* Web2OSX.m in Sources */,
 				8C7DF14319BAFE8D00B1EF41 /* AppDelegate.m in Sources */,
 				8C7DF13C19BAFE8D00B1EF41 /* main.m in Sources */,
 			);

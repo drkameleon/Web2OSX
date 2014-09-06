@@ -6,12 +6,13 @@
  * All rights reserved.
  *
  *---------------------------------------------------
- * main.m
+ * Web2OSX.h
  ****************************************************/
 
 #import <Cocoa/Cocoa.h>
+#import <WebKit/WebView.h>
+#import <WebKit/WebFrame.h>
 
-int main(int argc, const char * argv[])
-{
-    return NSApplicationMain(argc, argv);
-}
+@interface Web2OSX : WebView
+
+@end

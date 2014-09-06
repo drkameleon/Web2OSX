@@ -6,12 +6,11 @@
  * All rights reserved.
  *
  *---------------------------------------------------
- * main.m
+ * Web2OSX.m
  ****************************************************/
 
-#import <Cocoa/Cocoa.h>
+#import "Web2OSX.h"
 
-int main(int argc, const char * argv[])
-{
-    return NSApplicationMain(argc, argv);
-}
+@implementation Web2OSX
+
+@end
