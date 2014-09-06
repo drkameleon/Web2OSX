@@ -53,6 +53,8 @@
 #import <WebKit/WebFrame.h>
 #import <WebKit/WebScriptObject.h>
 
+#import "SBJson4.h"
+
 @interface Web2OSX : WebView
 
 //=====================
