@@ -23,6 +23,7 @@
 
 - (void)awakeFromNib
 {
+    [self setHidden:YES];
     // Set up delegates
     [self setDownloadDelegate:self];
     [self setEditingDelegate:self];
@@ -78,6 +79,8 @@ ENABLE_JS_BRIDGE
 - (void)webviewProgressFinished:(NSNotification*)n
 {
     NOTIFY(_LOAD_FINISHED, nil);
+    
+    [[self animator] setHidden:NO];
 }
 
 //=====================

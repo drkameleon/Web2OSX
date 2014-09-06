@@ -28,6 +28,10 @@
 
 - (void)awakeFromNib
 {
+    // Show loading indicator
+    
+    [[self loadingIndicator] startAnimation:nil];
+    
     // Set backend
     
     [[self web2OSX] setBackend:self];
@@ -35,7 +39,7 @@
     // Set observers
     
     OBSERVE(_LOAD_FINISHED, @selector(loadFinished:), nil);
-}
+} 
 
 //=====================
 // Observers
@@ -44,6 +48,8 @@
 - (void)loadFinished:(NSNotification*)n
 {
     NSLog(@"Load Finished.");
+    [[self loadingIndicator] stopAnimation:nil];
+    [[[self loadingIndicator] animator] setHidden:YES];
 }
 
 //=====================

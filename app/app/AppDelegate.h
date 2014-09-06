@@ -24,6 +24,7 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (weak) IBOutlet Web2OSX *web2OSX;
+@property (weak) IBOutlet NSProgressIndicator *loadingIndicator;
 
 //=====================
 // Backend Library
