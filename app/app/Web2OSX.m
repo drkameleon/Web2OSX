@@ -49,6 +49,9 @@
     // Load Web App
     [[self mainFrame] loadHTMLString:STR_FROM_FILE(_BASE_PATH)
                              baseURL:RSRC_URL(_BASE_PATH)];
+    
+    id win = [self windowScriptObject];
+    [win setValue:self forKey:@"API"];
 }
 
 //=====================
@@ -60,9 +63,25 @@
     return [self stringByEvaluatingJavaScriptFromString:js];
 }
 
+- (void)log:(NSString*)msg
+{
+    NSLog(@"Logging from JS : %@", msg);
+}
+
 //=====================
 // Delegates
 //=====================
+
++ (BOOL)isSelectorExcludedFromWebScript:(SEL)aSelector
+{
+    // Necessary for Javascript->Cocoa bridging
+    return NO;
+}
+
++ (BOOL)isKeyExcludedFromWebScript:(const char *)name
+{
+    return NO;
+}
 
 //-----------------
 // UIDelegate

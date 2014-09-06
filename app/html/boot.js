@@ -9,6 +9,19 @@
  * boot.js
  ****************************************************/
 
+//=====================
+// Boot
+//=====================
+
+// Override native console.log
+// and send logs to Objective-C
+
+console.log = function(text) {
+    API.log_(text);
+}
+
+// On jQuery-ready
+
 $(function()
 {
     // Make sure not context menu appears
@@ -17,5 +30,6 @@ $(function()
         preventDefault();
     });
   
+    API.log_("Done");
 });
 

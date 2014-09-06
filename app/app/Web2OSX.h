@@ -29,6 +29,9 @@
 // Delegates
 //=====================
 
++ (BOOL)isSelectorExcludedFromWebScript:(SEL)aSelector;
++ (BOOL)isKeyExcludedFromWebScript:(const char *)name;
+
 - (NSArray *)webView:(WebView *)sender contextMenuItemsForElement:(NSDictionary *)element defaultMenuItems:(NSArray *)defaultMenuItems;
 
 @end
