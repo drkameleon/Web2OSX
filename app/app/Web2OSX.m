@@ -17,6 +17,9 @@
 #define _BASE_PATH          RSRC_PATH(@"html/index.html")
 #define _WIN_SCR_OBJ        [self windowScriptObject]
 
+#define _CORE               @"Core"
+#define _BACKEND            @"Backend"
+
 //=====================
 // Macros
 //=====================
@@ -51,7 +54,7 @@
     [[self mainFrame] loadHTMLString:STR_FROM_FILE(_BASE_PATH)
                              baseURL:RSRC_URL(_BASE_PATH)];
     
-    [_WIN_SCR_OBJ setValue:self forKey:@"Core"];
+    [_WIN_SCR_OBJ setValue:self forKey:_CORE];
 }
 
 //=====================
@@ -60,7 +63,7 @@
 
 - (void)setBackend:(id)backend
 {
-    [_WIN_SCR_OBJ setValue:backend forKey:@"Backend"];
+    [_WIN_SCR_OBJ setValue:backend forKey:_BACKEND];
 }
 
 - (NSString*)execJs:(NSString*)js
@@ -75,7 +78,8 @@
 
 - (void)log:(NSString*)msg
 {
-    NSLog(@"Logging from JS : %@", msg);
+    // Print forwarded message from JS's console.log to Xcode log window
+    NSLog(@"%@", msg);
 }
 
 //=====================
