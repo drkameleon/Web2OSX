@@ -84,13 +84,13 @@
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)aSelector
 {
-    NSLog(@"Asking for: %@",NSStringFromSelector(aSelector));
     // Necessary for Javascript->Cocoa bridging
     return NO;
 }
 
 + (BOOL)isKeyExcludedFromWebScript:(const char *)name
 {
+    // Necessary for Javascript->Cocoa bridging
     return NO;
 }
 
