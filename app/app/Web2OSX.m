@@ -39,8 +39,32 @@
 
 - (void)awakeFromNib
 {
+    // Set up delegates
+    [self setDownloadDelegate:self];
+    [self setEditingDelegate:self];
+    [self setFrameLoadDelegate:self];
+    [self setResourceLoadDelegate:self];
+    [self setUIDelegate:self];
+    
+    // Load Web App
     [[self mainFrame] loadHTMLString:STR_FROM_FILE(_BASE_PATH)
                              baseURL:RSRC_URL(_BASE_PATH)];
+}
+
+//=====================
+// Delegates
+//=====================
+
+//-----------------
+// UIDelegate
+//-----------------
+
+        - (NSArray *)webView:(WebView *)sender
+  contextMenuItemsForElement:(NSDictionary *)element
+            defaultMenuItems:(NSArray *)defaultMenuItems
+{
+    // Disable Right-click menu
+    return nil;
 }
 
 @end
