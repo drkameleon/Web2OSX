@@ -6,17 +6,12 @@
  * All rights reserved.
  *
  *---------------------------------------------------
- * w2osx.js
+ * app.js
  ****************************************************/
 
-loadTemplate = function(template,data,into) {
-	$.get(template, function(tmpl) {
-		var rendered = Mustache.render(tmpl, data);
-		$(into).html(rendered);
-	});
-}
+ // The main entry point for the app
 
-loadView = function(view,data) {
-	loadTemplate('views/' + view + '.html', data, 'body');
-}
-
+$(function()
+{
+	loadView("home");
+});

@@ -100,14 +100,5 @@ $(function()
     {
         preventDefault();
     });
-
-    $("body").html("ALL SET");
-
-    loadView("home",{});
-  
-    console.log("Hello world");
-    Backend.testMe();
-
-
 });
 
